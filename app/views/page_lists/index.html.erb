@@ -1,0 +1,8 @@
+<%= form_tag(page_lists_search_path, method: :get, remote: true) do %>
+    <%= text_field_tag(:search, params[:search])%>
+    <%= submit_tag "submit", class: 'submit-btn' %>
+<% end %>
+<h1>Pages</h1>
+<div id="page_listing">
+    <%= render partial: "page_listing", locals: {pages: @pages} %>
+</div>
